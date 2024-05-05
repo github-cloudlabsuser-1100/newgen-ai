@@ -11,12 +11,18 @@ from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Frame, PageTemplate
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
+from PIL import Image
 
 
 def main():
     st.set_page_config(layout="wide")
-    st.title('Gen AI - Trend analyser')
 
+    newgenai_logo = "NGAI-transformed.png"
+    ui_logo = Image.open(newgenai_logo)
+    if ui_logo is not None:
+        st.image(ui_logo,width=100)
+
+    st.title('Gen AI - Trend analyser')
     # Uploader button
     uploaded_file = st.file_uploader("Upload Excel file", type=["xlsx"])
 
