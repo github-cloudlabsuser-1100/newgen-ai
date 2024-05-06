@@ -5,10 +5,15 @@ To run our New Gen AI - Trend analyzer product, use the command
 
 Make sure you have all the below packages installed
 
-**!pip install streamlit
-!pip install pandas
-!pip install altair
-!pip install openai
-!pip install plotly
-!pip install reportlab**
+**!pip install streamlit**
+
+**!pip install pandas**
+
+**!pip install altair**
+
+**!pip install openai**
+
+**!pip install plotly**
+
+**!pip install reportlab**
 
