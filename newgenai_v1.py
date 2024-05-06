@@ -396,11 +396,18 @@ def chat_bot(df1,df2,df3):
         st.session_state.messages.append({"role": "user", "content": prompt})
         # ip_df1 = pd.read_csv(os.path.join(analysis_folder,f'{report_name}_{selected_page}_consolidatedTable.csv'))
         user_prompt = f'''
-        You are given with the financial dataframe of Varun Beverages : {df1} which is the financial statement of Varun Beverages (VB) make sure that the data given in the financial statement is expressed in terms of Million rupees except for the Earning per share, the competitive analysis of VB is : {df2}, this dataframe provides the competitor list of VB and the demographic data is : {df3}, this shows what percentage of people from different categories have preferred which Company drink.
+        Act as a experienced sales analyst in the beverages sales domain.
+        You are given with the financial dataframe of Varun Beverages (VB) : {df1} which is the financial statement of Varun Beverages (VB) make sure that the data given in the financial statement is expressed in terms of Million rupees except for the Earning per share, the competitive analysis of VB is : {df2}, this dataframe provides the competitor list of VB and the demographic data is : {df3}, this shows what percentage of people from different categories have preferred which Company drink.
         As a Q&A assistant of Varun beverage, your task is to provide answers for the questions that are relavant to the data that you have as the dataframes.
         The user question is : {prompt}
-        STRICTLY DO NOT ANSWER TO ANY QUESTION WHICH IS IRRELAVENT TO THE ABOVE INPUT TABLE!!!
-        If the user question is irrelavant to the data you have, respond by saying "Sorry, I can't answer to your question as I don't have the corresponding data"
+        Analyze the question first, if the question can be answered by referring to the data table, provide direct answers without any explanations,
+        But, if there is any decision making question related to the beverage industry, you should be able to provide proper response.
+        For example: If the user question is "Is it a right time for VB to launch their new drink in India in the month of May 2024?", 
+        Generally the summer in India will be during the month of March to May followed by monsoon and rainy season from September to January.
+        Analyze the overall growth of VB based on its financial statement and provide your response keeping in mind launching a new soft drink is always a good opinion during summer to beat the heat while the soft drink sales will be low during monsoon and rainy season and so you can suggest the user to launch soft drinks in the summer time for better sales and revenue. Also ensure that the company is showing consistent growth in its sales and only then people will buy that company's product, if the growth is not upto the mark, provide the suggestion accordingly by suggesting effective promotion to increase sales of new product.        
+        STRICTLY DO NOT ANSWER TO ANY QUESTION WHICH IS IRRELAVENT TO THE SOFT DRINK INDUSTRY!!!
+   
+        If the user question is irrelavant to the soft drink you have, respond by saying "Sorry, I can't answer to your question as I don't have the corresponding data"
         '''
         
         #st.write(user_prompt)
